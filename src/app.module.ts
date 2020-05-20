@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './components/landing/landing';
 import { NavbarComponent } from './components/navbar/navbar';
 import { LoginComponent } from './components/login/login';
+// Material
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import { LoginComponent } from './components/login/login';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [NavbarComponent]
