@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
+import { MatTableDataSource} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @Component({
   templateUrl: './landing.html',
@@ -6,10 +10,19 @@ import { Component } from '@angular/core';
 })
 
 export class LandingComponent {
+
+  constructor() {
+    
+  }
+
+
   title = 'Landing';
    displayedColumns: string[] = ['name', 'type', 'method', 'status','default','copy','delete'];
-  dataSource = list;
-  pageSize = list.length;
+   dataSource = list;
+
+  pageDataSource = new MatTableDataSource (list);
+
+
 }
 
 
@@ -36,4 +49,7 @@ const list: listOfData[] = [
   { name: 'Hydrogen', type: 'Certification', method: 'Email',status : 'Active',default :'----',copy:'Copy',delete :'delete'},
   { name: 'Hydrogen', type: 'Drop', method: 'Email',status : 'Active',default :'----',copy:'Copy',delete :'delete'},
 ];
+
+
+
 
